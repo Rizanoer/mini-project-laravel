@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiPelangganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/pelanggans', [ApiPelangganController::class, 'index']);
+Route::post('/pelanggans', [ApiPelangganController::class, 'store']);
+Route::get('/pelanggans/{id}', [ApiPelangganController::class, 'show']);
+Route::put('/pelanggans/{id}', [ApiPelangganController::class, 'update']);
+Route::delete('/pelanggans/{id}', [ApiPelangganController::class, 'destroy']);
