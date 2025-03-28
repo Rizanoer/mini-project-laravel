@@ -1,69 +1,32 @@
 <!DOCTYPE html>
+<html lang="id">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
     <style>
-      .header {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 50px;
+      .button {
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 10px;
+          font-size: 16px;
+          text-decoration: none;
+          color: white;
+          background-color: #007bff;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
       }
-      table.tb_pelanggan {
-        border: 0px solid #000000;
-        width: 100%;
-        text-align: left;
-        border-collapse: collapse;
-      }
-      table.tb_pelanggan td, table.tb_pelanggan th {
-        border: 1px solid #000000;
-        padding: 5px 4px;
-      }
-      table.tb_pelanggan tbody td {
-        font-size: 13px;
-      }
-      table.tb_pelanggan thead {
-        background: #CFCFCF;
-        background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
-        background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
-        background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
-      }
-      table.tb_pelanggan thead th {
-        font-size: 15px;
-        font-weight: bold;
-        color: #000000;
-        text-align: center;
-      }
-      table.tb_pelanggan tfoot td {
-        font-size: 14px;
+      .button:hover {
+          background-color: #0056b3;
       }
     </style>
   </head>
   <body>
-    <section class="layout">
-      <div class="header"></div>
-      <div class="main">
-        <div>
-          {{-- <a href="{{ route('pelanggan.tambah') }}" class="btn btn-primary">Tambah Data</a> --}}
-        </div>
-        <table class="tb_pelanggan">
-          <thead>
-            <tr>
-              <th>ID Pelanggan</th>
-              <th>Nama</th>
-              <th>Domisili</th>
-              <th>Jenis Kelamin</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>cell1_1</td>
-              <td>cell2_1</td>
-              <td>cell3_1</td>
-              <td>cell4_1</td>
-              <td>cell5_1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div style="text-align: center">
+      <a href="{{ route('pelanggans.index') }}" class="button">Pelanggan</a>
+      <a href="{{ route('barangs.index') }}" class="button">Barang</a>
+      <a href="{{ route('penjualans.index') }}" class="button">Penjualan</a>
+    </div>
   </body>
 </html>

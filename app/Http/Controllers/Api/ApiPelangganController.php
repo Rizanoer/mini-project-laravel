@@ -46,10 +46,10 @@ class ApiPelangganController extends Controller
   public function store(Request $request)
   {
     $request->validate([
-        'id_pelanggan' => 'required',
-        'nama' => 'required',
-        'domisili' => 'required',
-        'jenis_kelamin' => 'required'
+      'id_pelanggan' => 'required',
+      'nama' => 'required',
+      'domisili' => 'required',
+      'jenis_kelamin' => 'required'
     ]);
 
     $input = $request->all();
@@ -77,24 +77,15 @@ class ApiPelangganController extends Controller
     return response()->json([], 500);
   }
 
-  public function show($id)
-  {
-      $pelanggan = Pelanggan::find($id);
-      if (!$pelanggan) {
-          return response()->json(['message' => 'Pelanggan tidak ditemukan'], 404);
-      }
-      return response()->json($pelanggan);
-  }
-
   public function update(Request $request, $id)
   {
-      $pelanggan = Pelanggan::find($id);
-      if (!$pelanggan) {
-          return response()->json(['message' => 'Pelanggan tidak ditemukan'], 404);
-      }
+    $pelanggan = Pelanggan::find($id);
+    if (!$pelanggan) {
+      return response()->json(['message' => 'Pelanggan tidak ditemukan'], 404);
+    }
 
-      $pelanggan->update($request->all());
-      return response()->json($pelanggan);
+    $pelanggan->update($request->all());
+    return response()->json($pelanggan);
   }
 
   public function destroy($id)
